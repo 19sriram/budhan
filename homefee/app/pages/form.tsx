@@ -23,7 +23,6 @@ import {
 import {
   Field,
   FieldDescription,
-  FieldError,
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field"
@@ -37,10 +36,9 @@ import {
 import { _blocks, _flats } from "../const"
 
 const formSchema = z.object({
-  title: z
-    .string()
-    .min(5, "Bug title must be at least 5 characters.")
-    .max(32, "Bug title must be at most 32 characters."),
+  block: z.string().min(1, "Please select a block."),
+  haus: z.string().min(1, "Please select a hausnumber."),
+  picture: z.instanceof(File).nullable(),
   description: z
     .string()
     .min(20, "Description must be at least 20 characters.")
@@ -59,7 +57,6 @@ export function MaintenanceFeeForm() {
       block: "",
       haus: "",
       picture: null as File | null,
-      title: "",
       description: "",
     },
     validators: {
@@ -135,9 +132,6 @@ export function MaintenanceFeeForm() {
                         ))}
                       </SelectContent>
                     </Select>
-                    {isInvalid && (
-                      <FieldError errors={field.state.meta.errors} />
-                    )}
                   </Field>
                 )
               }}
@@ -170,9 +164,6 @@ export function MaintenanceFeeForm() {
                         ))}
                       </SelectContent>
                     </Select>
-                    {isInvalid && (
-                      <FieldError errors={field.state.meta.errors} />
-                    )}
                   </Field>
                 )
               }}
@@ -223,9 +214,6 @@ export function MaintenanceFeeForm() {
                     <FieldDescription>
                       Upload a picture related to your maintenance issue.
                     </FieldDescription>
-                    {isInvalid && (
-                      <FieldError errors={field.state.meta.errors} />
-                    )}
                   </Field>
                 )
               }}
@@ -259,9 +247,6 @@ export function MaintenanceFeeForm() {
                     <FieldDescription>
                       Anything to be added for this upload?
                     </FieldDescription>
-                    {isInvalid && (
-                      <FieldError errors={field.state.meta.errors} />
-                    )}
                   </Field>
                 )
               }}
