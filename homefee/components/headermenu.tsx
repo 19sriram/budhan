@@ -13,16 +13,22 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar"
+import Link from "next/link"
 
 export function HeaderMenu() {
   return (
     <Menubar>
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>Navigate</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>
-            New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+          <Link href="/"><MenubarItem>
+            Home
           </MenubarItem>
+          </Link>
+          <Link href="/about"><MenubarItem>
+            About
+          </MenubarItem>
+          </Link>
           <MenubarItem>
             New Window <MenubarShortcut>⌘N</MenubarShortcut>
           </MenubarItem>
@@ -42,7 +48,7 @@ export function HeaderMenu() {
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
-      <MenubarMenu>
+      {/* <MenubarMenu>
         <MenubarTrigger>Edit</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
@@ -67,8 +73,8 @@ export function HeaderMenu() {
           <MenubarItem>Copy</MenubarItem>
           <MenubarItem>Paste</MenubarItem>
         </MenubarContent>
-      </MenubarMenu>
-      <MenubarMenu>
+      </MenubarMenu> */}
+      {/* <MenubarMenu>
         <MenubarTrigger>View</MenubarTrigger>
         <MenubarContent>
           <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
@@ -87,21 +93,7 @@ export function HeaderMenu() {
           <MenubarSeparator />
           <MenubarItem inset>Hide Sidebar</MenubarItem>
         </MenubarContent>
-      </MenubarMenu>
-      <MenubarMenu>
-        <MenubarTrigger>Profiles</MenubarTrigger>
-        <MenubarContent>
-          <MenubarRadioGroup value="benoit">
-            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-          </MenubarRadioGroup>
-          <MenubarSeparator />
-          <MenubarItem inset>Edit...</MenubarItem>
-          <MenubarSeparator />
-          <MenubarItem inset>Add Profile...</MenubarItem>
-        </MenubarContent>
-      </MenubarMenu>
+      </MenubarMenu> */}
     </Menubar>
   )
 }
