@@ -13,6 +13,7 @@
    
 ## Screenshot
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/d2f4468a-e088-4f81-94b2-b26c36cd984d" />
+<img width="864" height="1184" alt="Gemini_Generated_Image_usomfpusomfpusom" src="https://github.com/user-attachments/assets/89830907-6d84-4ca0-80cc-66ce522fba5e" />
 
 ## Improvements
 1. Error boundary
